@@ -56,7 +56,7 @@
 
 <style>
     
-    .swiper {
+  /*  .swiper {
       width: 100%;
       height: 100%;
     }
@@ -66,7 +66,7 @@
       font-size: 18px;
       background: #fff;
 
-      /* Center slide text vertically */
+      
       display: -webkit-box;
       display: -ms-flexbox;
       display: -webkit-flex;
@@ -86,7 +86,62 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
+    }*/
+
+    * {
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+section {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+ 
+}
+section video{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+section .navegacion{
+	position: absolute;
+	bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items:  center;
+}
+ 
+section .navegacion li{
+	list-style: none;
+	cursor: pointer;
+	margin: 0 10px;
+	border-radius: 2px;
+	background: #eee;
+	padding: 3px 3px 0;
+	opacity: 0.65;
+	transition: 0.6s;
+}
+ 
+section .navegacion li:hover{
+	opacity: 1;
+	background: #fff;
+}
+ 
+section .navegacion li img{
+	width: 150px;
+	transition: 0.6s;
+}
+ 
+section .navegacion li img:hover{
+	width: 200px;
+}
   </style>
 </head>
 
@@ -136,8 +191,8 @@
 
 					</div> -->
 
-                    <div>
-                        <!-- Swiper -->
+                    <!-- <div>
+                                
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
                             <div class="swiper-slide"><video style="width: 100%; height: 100%;" src="./Assets/Videos/Video_1.mp4" autoplay loop>
@@ -152,9 +207,33 @@
                              <div class="swiper-button-prev" style="color: #fff;"></div>
                             <div class="swiper-pagination"></div>
                         </div>
-					</div>
+					</div> -->
 
-
+          <section >
+            <video id="slider" autoplay muted loop>
+              <source src="./Assets/Videos/Video_1.mp4" type="video/mp4">		
+         
+            </video>
+          
+          <ul class="navegacion">
+            <li onclick="cargarVideo('Video_1.mp4');">
+              <img src="./Assets/Videos/Video_1.mp4">
+            </li>
+            <li onclick="cargarVideo('Video_2.mp4');">
+              <img src="./Assets/Videos/Video_2.mp4">
+            </li>
+            <li onclick="cargarVideo('Video_3.mp4');">
+              <img src="./Assets/Videos/Video_3.mp4">
+            </li>
+            <li onclick="cargarVideo('Video_4.mp4');">
+              <img src="./Assets/Videos/Video_4.mp4">
+            </li>
+            <li onclick="cargarVideo('Video_5.mp4');">
+              <img src="./Assets/Videos/Video_5.mp4">
+            </li>
+          </ul>
+         
+          </section>
 
 
 
@@ -231,10 +310,10 @@
 
 <?php include 'template/footerMain.php';?>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
+<!-- <script>
     var swiper = new Swiper(".mySwiper", {
         autoplay: {
-          delay: 7000,
+          delay: 6900,
           disableOnInteraction: false,
         },
         loop: true,
@@ -247,6 +326,11 @@
           prevEl: ".swiper-button-prev",
         },
     });
+  </script> -->
+  <script type="text/javascript">
+    function cargarVideo(url){
+      document.getElementById('slider').src=url;
+    }	
   </script>
 
 </body>
