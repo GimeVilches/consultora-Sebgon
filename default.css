@@ -689,6 +689,11 @@ ul.style2 li {
   background-color: #000;
 }
 
+.button-video{
+  position: absolute;
+  top: 55%
+}
+
 .link2 {
 
   float: left;
