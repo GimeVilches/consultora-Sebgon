@@ -138,11 +138,7 @@
             <video class="hero-video" id="slider" autoplay loop muted>
               <source src="assets/videos/video-1.mp4" type="video/mp4" />
             </video>
-            <a
-              href="mailto:consultora@consultorasebgon.com"
-              class="button-video"
-              >Ver M&aacutes</a
-            >
+            <a id="button__ver-mas" class="button-video">Ver M&aacutes</a>
             <ul class="navigation">
               <li onclick="videoUrl('assets/videos/video-1.mp4')">
                 <img src="assets/images/portada-carrusel-1.jpg" alt="Reunión" />
@@ -295,6 +291,16 @@
     <script>
       function videoUrl(hmmmm) {
         document.getElementById("slider").src = hmmmm;
+      }
+    </script>
+
+    <script>
+      const teamSection = document.querySelector("#content");
+      const buttonAboutUs = document.getElementById("button__ver-mas");
+      if (buttonAboutUs) {
+        buttonAboutUs.addEventListener("click", () => {
+          teamSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
       }
     </script>
 

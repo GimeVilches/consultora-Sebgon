@@ -627,8 +627,9 @@ section .navigation li img:hover{
   width: 180px;
 }
 .button-video {
+  cursor: pointer;
   position: relative;
-  top: 55%;
+  top: 60%;
   left: calc(50% - 30px);
   padding: 10px 30px;
   background-color: rgb(185, 22, 0);
