@@ -610,7 +610,6 @@ ul.style2 li {
   height: 12px;
   background: #fff;
   border-radius: 50%;
-  cursor: pointer;
   box-shadow: 0 0 2px rgb(116, 116, 116);
   transition: 0.3s ease;
 }

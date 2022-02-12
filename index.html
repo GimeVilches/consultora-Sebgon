@@ -136,11 +136,46 @@
 
           <!-- Section Hero Video -->
           <section class="container__hero-video">
-            <video class="video-slide active" src="assets/videos/video-1.mp4" autoplay muted loop></video>
-            <video class="video-slide" src="assets/videos/video-2.mp4" autoplay muted loop></video>
-            <video class="video-slide" src="assets/videos/video-3.mp4" autoplay muted loop></video>
-            <video class="video-slide" src="assets/videos/video-4.mp4" autoplay muted loop></video>
-            <video class="video-slide" src="assets/videos/video-5.mp4" autoplay muted loop></video>
+            <video
+              onclick="this.paused? this.play() : this.pause()"
+              class="video-slide active"
+              src="assets/videos/video-1.mp4"
+              autoplay
+              muted
+              loop
+            ></video>
+            <video
+              onclick="this.paused? this.play() : this.pause()"
+              class="video-slide"
+              src="assets/videos/video-2.mp4"
+              autoplay
+              muted
+              loop
+            ></video>
+            <video
+              onclick="this.paused? this.play() : this.pause()"
+              class="video-slide"
+              src="assets/videos/video-3.mp4"
+              autoplay
+              muted
+              loop
+            ></video>
+            <video
+              onclick="this.paused? this.play() : this.pause()"
+              class="video-slide"
+              src="assets/videos/video-4.mp4"
+              autoplay
+              muted
+              loop
+            ></video>
+            <video
+              onclick="this.paused? this.play() : this.pause()"
+              class="video-slide"
+              src="assets/videos/video-5.mp4"
+              autoplay
+              muted
+              loop
+            ></video>
             <div class="slider-navigation">
               <div class="nav-btn active"></div>
               <div class="nav-btn"></div>
@@ -278,8 +313,54 @@
       }
     </script>
 
-    <!-- Video Slider -->
+    <!-- Video Slider SIN opcion de clickear los circulos-->
     <script>
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+
+      let sliderNav = function (manual) {
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+      };
+
+      let repeat = function (activeClass) {
+        let acive = document.getElementsByClassName("active");
+        let i = 1;
+
+        let repeater = () => {
+          setTimeout(() => {
+            [...acive].forEach((activeSlide) => {
+              activeSlide.classList.remove("active");
+            });
+            slides[i].classList.add("active");
+            btns[i].classList.add("active");
+            i++;
+
+            if (slides.length == i) {
+              i = 0;
+            }
+            if (i >= slides.length) {
+              return;
+            }
+
+            repeater();
+          }, 10000);
+        };
+        repeater();
+      };
+      repeat();
+    </script>
+
+    <!-- Video Slider CON opcion de clickear los circulos-->
+    <!-- <script>
       const btns = document.querySelectorAll(".nav-btn");
       const slides = document.querySelectorAll(".video-slide");
 
@@ -329,7 +410,7 @@
 
       }
       repeat()
-    </script>
+    </script> -->
 
     <?php include 'template/footerMain.php';?>
   </body>
