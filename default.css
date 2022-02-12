@@ -588,6 +588,7 @@ ul.style2 li {
   height: 90vh;
   background-color: #0F468C;
 }
+
 .video-slide{
   position: relative;
   top: 0;
@@ -632,10 +633,24 @@ ul.style2 li {
   transition: 1s;
   transition-property: clip-path;
 }
+@media screen and (max-width: 1000px) {
+  .container__hero-video {
+    height: 50vh;
+    width: 100%;
+  }
+}
 
-@media screen and (max-width:480px) {
+
+@media screen and (max-width:600px) {
   .container__hero-video{
     height: 30vh;
+    width: 100%;
+  }
+}
+@media screen and (max-width:400px) {
+  .container__hero-video{
+    height: 10vh;
+    width: 100%;
   }
 }
 /* Hero Video INDEX */
