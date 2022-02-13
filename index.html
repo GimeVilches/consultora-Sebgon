@@ -83,6 +83,10 @@
       ga("create", "UA-76637030-1", "auto");
       ga("send", "pageview");
     </script>
+    <script
+      src="https://kit.fontawesome.com/9514dd5057.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body class="homepage">
@@ -137,6 +141,7 @@
           <!-- Section Hero Video -->
           <section class="container__hero-video">
             
+          <!-- <section class="container__hero-video">
             <video
               onclick="this.paused? this.play() : this.pause()"
               class="video-slide active"
@@ -190,6 +195,63 @@
               <div class="nav-btn"></div>
               <div class="nav-btn"></div>
               <div class="nav-btn"></div>
+            </div>
+          </section> -->
+
+          <!-- Section Hero Video definitivo-->
+          <section>
+            <div class="slider">
+              <div class="slide active">
+                <video
+                  src="assets/videos/video-1.mp4"
+                  autoplay
+                  muted
+                  loop
+                ></video>
+              </div>
+              <div class="slide">
+                <video
+                  src="assets/videos/video-2.mp4"
+                  autoplay
+                  muted
+                  loop
+                ></video>
+              </div>
+              <div class="slide">
+                <video
+                  src="assets/videos/video-3.mp4"
+                  autoplay
+                  muted
+                  loop
+                ></video>
+              </div>
+              <div class="slide">
+                <video
+                  src="assets/videos/video-4.mp4"
+                  autoplay
+                  muted
+                  loop
+                ></video>
+              </div>
+              <div class="slide">
+                <video
+                  src="assets/videos/video-5.mp4"
+                  autoplay
+                  muted
+                  loop
+                ></video>
+              </div>
+              <div class="navigation">
+                <i class="fas fa-chevron-left prev-btn"></i>
+                <i class="fas fa-chevron-right next-btn"></i>
+              </div>
+              <div class="navigation-visibility">
+                <div class="slide-icon active"></div>
+                <div class="slide-icon"></div>
+                <div class="slide-icon"></div>
+                <div class="slide-icon"></div>
+                <div class="slide-icon"></div>
+              </div>
             </div>
           </section>
 
@@ -321,8 +383,93 @@
       }
     </script>
 
-    <!-- Video Slider SIN opcion de clickear los circulos-->
+    <!-- Video Slider definitivo -->
     <script>
+      const slider = document.querySelector(".slider");
+      const nextBtn = document.querySelector(".next-btn");
+      const prevBtn = document.querySelector(".prev-btn");
+      const slides = document.querySelectorAll(".slide");
+      const slideIcons = document.querySelectorAll(".slide-icon");
+      const numberOfSlides = slides.length;
+      let slideNumber = 0;
+
+      // Next button
+      nextBtn.addEventListener("click", () => {
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        slideIcons.forEach((slideIcon) => {
+          slideIcon.classList.remove("active");
+        });
+
+        slideNumber++;
+
+        if (slideNumber > numberOfSlides - 1) {
+          slideNumber = 0;
+        }
+
+        slides[slideNumber].classList.add("active");
+        slideIcons[slideNumber].classList.add("active");
+      });
+
+      // Previous button
+      prevBtn.addEventListener("click", () => {
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        slideIcons.forEach((slideIcon) => {
+          slideIcon.classList.remove("active");
+        });
+
+        slideNumber--;
+
+        if (slideNumber < 0) {
+          slideNumber = numberOfSlides - 1;
+        }
+
+        slides[slideNumber].classList.add("active");
+        slideIcons[slideNumber].classList.add("active");
+      });
+
+      // Video slider autoplay
+      let playSlider;
+
+      let repeater = () => {
+        playSlider = setInterval(function () {
+          slides.forEach((slide) => {
+            slide.classList.remove("active");
+          });
+          slideIcons.forEach((slideIcon) => {
+            slideIcon.classList.remove("active");
+          });
+
+          slideNumber++;
+
+          if (slideNumber > numberOfSlides - 1) {
+            slideNumber = 0;
+          }
+
+          slides[slideNumber].classList.add("active");
+          slideIcons[slideNumber].classList.add("active");
+        }, 4000);
+      };
+      repeater();
+
+      // Stop the video slider autoplay on mouseover
+      slider.addEventListener("mouseover", () => {
+        clearInterval(playSlider);
+        console.log("Entro")
+      });
+
+      // Start the video slider autoplay again on mouseout
+      slider.addEventListener("mouseout", () => {
+        repeater();
+        console.log("Salio")
+      });
+    </script>
+
+    <!-- Video Slider SIN opcion de clickear los circulos-->
+    <!-- <script>
       const btns = document.querySelectorAll(".nav-btn");
       const slides = document.querySelectorAll(".video-slide");
 
@@ -365,11 +512,15 @@
         repeater();
       };
       repeat();
+<<<<<<< HEAD
 
       
       
     </script>
     </script>
+=======
+    </script> -->
+>>>>>>> db4fb4c6e01413aa279bd940cb7ab413fa63d2bd
 
     <!-- Video Slider CON opcion de clickear los circulos-->
     <!-- <script>
