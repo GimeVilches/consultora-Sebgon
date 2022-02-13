@@ -633,6 +633,24 @@ ul.style2 li {
   transition: 1s;
   transition-property: clip-path;
 }
+.button-video {
+  cursor: pointer;
+  position: relative;
+  top: 60%;
+  left: calc(50% - 65px);
+  padding: 10px 30px;
+  background-color: rgb(185, 22, 0);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  transition: all 0.5s ease 0s;
+}
+.button-video:hover{
+  background-color: #000;
+}
 
 
 
