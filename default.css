@@ -672,7 +672,7 @@ ul.style2 li {
 
   
 
-@media screen and (max-width:1000px) {
+@media all and (max-width: 992px) { 
   .slider{
     z-index: 999999;
     position: relative;
@@ -686,17 +686,12 @@ ul.style2 li {
     object-fit: cover;
     
   }
-  .navigation-visibility .slide-icon{
-   display: none;
-  }
-  .button-video {
-    cursor: pointer;
-    position: relative;
-    top: -200px;
-    
-  }
   
+  .navigation{
+    height: 100%;
 }
+}
+
 
 
 /* Hero Video INDEX */
