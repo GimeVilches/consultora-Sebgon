@@ -653,7 +653,7 @@ ul.style2 li {
 .button-video {
   cursor: pointer;
   position: absolute;
-  top: 50vh;
+  top: 60%;
   left: calc(50% - 65px);
   padding: 10px 30px;
   background-color: rgb(185, 22, 0);
@@ -689,7 +689,7 @@ ul.style2 li {
   }
 .button-video {
   cursor: pointer;
-  position: relative; 
+  /* position: relative;  */
   left: 43.5%; 
 }
 }
