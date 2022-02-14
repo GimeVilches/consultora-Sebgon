@@ -652,8 +652,8 @@ ul.style2 li {
 /* Hero Video INDEX definitivo */
 .button-video {
   cursor: pointer;
-  position: relative;
-  top: -150px;
+  position: absolute;
+  top: 50vh;
   left: calc(50% - 65px);
   padding: 10px 30px;
   background-color: rgb(185, 22, 0);
@@ -668,9 +668,6 @@ ul.style2 li {
 .button-video:hover{
   background-color: #000;
 }
-
-
-  
 
 @media all and (max-width: 992px) { 
   .slider{
@@ -689,13 +686,11 @@ ul.style2 li {
   
   .navigation{
     height: 90%;
-}
+  }
 .button-video {
   cursor: pointer;
-  position: relative;
- 
-  left: 43.5%;
-  
+  position: relative; 
+  left: 43.5%; 
 }
 }
 
