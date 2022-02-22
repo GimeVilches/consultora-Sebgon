@@ -675,23 +675,22 @@ ul.style2 li {
     position: relative;
     background: #0F468C;
     width: 100%;
-    height: 600px;
+    height: 360px; /* antes en 600px */
   }
   .slider .slide video{
     width: 100%;
-    height: 600px;
-    object-fit: cover;
+    height: 362px; /* antes en 600px */
+    object-fit: contain; /* antes en cover */
     
-  }
-  
+  } 
   .navigation{
-    height: 90%;
+    height: 96%; /* antes en 90% */
   }
-.button-video {
-  cursor: pointer;
-  /* position: relative;  */
-  left: 43.5%; 
-}
+  .button-video {
+    cursor: pointer;
+    /* position: relative;  */
+    left: 43.5%; 
+  } 
 }
 
 
